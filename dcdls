@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]
+then
+ echo "$0: need two arguments: directory subdirectory"
+ exit 1
+fi
+
+if [ ! -d $1 ]
+then
+ echo "${0}: $2 is not a directory"
+ exit 1
+fi
+
+if [ ! -d $1/$2 ]
+then
+ echo "${0}: $2 is not a subdirectory of $1"
+ exit 1
+fi
+
+ls $1/$2
+#implicit exit 0

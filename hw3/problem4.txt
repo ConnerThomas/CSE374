@@ -1,0 +1,7 @@
+Conner Thomas
+CSE 372 HW3
+Problem 4
+
+1. The script sets the parameters for gnuplot with gunplot's own scripting language. It sets the axis labels and ranges, and then gives a command to plot the results from the text file.
+
+2. Looking at the plot, it seems like there's not a large correlation between the popularity of the site and the size of the index file. I would expect the more popular sites to have smaller ones to save bandwidth, but it also makes sense that they have much more available bandwidth and therefore don't have to worry about running out.

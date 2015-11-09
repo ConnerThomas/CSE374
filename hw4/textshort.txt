@@ -1,0 +1,11 @@
+This is a test file.
+this is the second line in all lowercase
+THIS IS THE THIRD LINE IN ALL UPPERCASE
+ThIs linE iS IN mixED cASe
+
+The fifth line is intentionally blank
+
+
+
+
+This is the last line.

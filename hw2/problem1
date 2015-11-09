@@ -1,0 +1,15 @@
+Each of the following will produce "blotz" on the stdout with a clean terminal in an empty directory.
+
+echo blotz
+
+echo blotz | ca
+
+echo > blotz; ls
+
+echo blotz | grep blotz
+
+alias blotz=''
+blotz
+!!
+
+

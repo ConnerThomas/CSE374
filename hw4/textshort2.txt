@@ -1,0 +1,14 @@
+This is a test file.
+This is the second line
+
+this is the FOURTH LINE
+
+the sixth line is all lowercase
+
+THE 8TH LINE IS ALL UPPERCASE!
+the nInTH liNE iS mixeD CASe
+
+
+
+
+I skipped 4 lines and this is the last one.

@@ -1,0 +1,11 @@
+{
+  "transport": "scp",
+  "hostname": "klaatu.cs.washington.edu",
+  "port": 22,
+  "username": "crt24",
+  "password": "Limeharp12",
+  "target": "/homes/crt24/hw5/",
+  "ignore": [
+    ".git/**"
+  ]
+}

@@ -1,0 +1,14 @@
+Conner Thomas
+CSE 374 HW 1
+
+1. wc lists the number of newlines, words, and bytes in the file given as an argument. The -l option makes the command just list the number of lines in a file.
+2. 158  202 7639 /etc/passwd
+3. You use the kill command to terminate a command that is running.
+4. $HOME stores the home of the current user. In my case it is /homes/crt24/. This is important because it is what ~ refers to as the home dir.
+5. $SHELL displays the type of shell that is running ("bash, psh, or others) This is important because it contains the commands used in the shell, whichever type is running.
+$USER stores which user is currently logged into the shell. This is important because different users have different rile permissions.
+6. To locate a file you use the locate command.
+7. The which command displays into (including the path to) command line executables, whereas the locate is valid for any file, not just executables.
+8. The command echo Hello World! > something differs from echo Hello world! by the destination of the echo command. The first command sends the output of echo to "something" (using the >) whereas the second sends the output to stdout, the command line output.
+9. Executing an additional echo with the output sent to the same file overwrites the entire file with the new echo text.
+10. Executing another echo with the double > (the >>) appends the echo text to the file instead of replacing it like the single > does.

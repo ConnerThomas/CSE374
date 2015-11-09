@@ -1,0 +1,8 @@
+Conner Thomas
+CSE 374 HW3
+README
+1-27-15
+
+To remove the extra URLs from altavista and 100best.., I added a line of code to egrep and remove any lines in the file with those URLs. They are part of the html template and not part of the actual list, so no data is lost by excluding these.
+
+Also, there were a few extraneous wikipedia URLs in the first few entries, but they were confined to "en.wikipedia..." rather than "www.wikipedia" so I added in another reverse egrep command to remove those entries.

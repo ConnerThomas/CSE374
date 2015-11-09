@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# This script concatenates file contents and prints errors to the first file
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 output_error_log f1 f2 ... fn"
+    exit
+fi
+ 
+FILE="$1"
+
+# Print an error ifthe first file already exists
+if [ -f "$FILE" ]; then
+    echo "Error: first file exists" >&2
+    exit 
+fi
+
+shift
+
+# For every argument, cat the output to stdout and otuput the errors to f1
+for var in "$@"
+do
+    cat "$var" 2>> "$FILE"
+    shift
+done
+
+exit

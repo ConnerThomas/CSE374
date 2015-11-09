@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# This script apphends a dated line count to the output file 
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 output_file f1 f2 ... fn"
+    exit
+fi
+
+FILE="$1"
+
+shift
+
+# outputs the date 
+date >> "$FILE"
+wc -l "$@" >> "$FILE"
+
+# this adds the line to output the total even if one file is given to wc
+if [ $# == 1 ]; then
+    output=$(wc -l "$1" | egrep -o [0-9]*)
+    echo $output" total">>"$FILE"
+fi
+
+exit

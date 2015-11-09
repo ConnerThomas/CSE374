@@ -1,0 +1,95 @@
+Script started on Mon 02 Feb 2015 10:56:05 PM PST
+kcrt24@klaatu:~/hw4\[crt24@klaatu hw4]$ gdb gasp
+GNU gdb (GDB) Fedora 7.6.1-46.fc19
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from /homes/crt24/hw4/gasp...done.
+(gdb) set args -n "this" tes xtshort.txt 
+(gdb) break main
+Breakpoint 1 at 0x400ad1: file gasp.c, line 80.
+(gdb) break fopen
+Breakpoint 2 at 0x4006b0
+(gdb) run
+Starting program: /homes/crt24/hw4/gasp -n "this" textshort.txt 
+
+Breakpoint 1, main (argc=4, argv=0x7fffffffe518) at gasp.c:80
+80	 if(argc < 3){
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-20.fc19.x86_64
+(gdb) print argv[2]
+$1 = 0x7fffffffe78c "this"
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x00000000004006b0 in fopen@plt ()
+(gdb) bt
+#0  0x00000000004006b0 in fopen@plt ()
+#1  0x0000000000400884 in findMatches (argv=0x7fffffffe518, 
+    argc=4, word=0x7fffffffe3c0 "this") at gasp.c:39
+#2  0x0000000000400bc7 in main (argc=4, argv=0x7fffffffe518)
+    at gasp.c:95
+(gdb) list gsa asp    asp.c:39
+34	   word[j] = tolower(word[j]);
+35	  }
+36	 }
+37	
+38	 for(int i = start_arg; i < argc; i++){ // iterate over file in args
+39	  fp = fopen(argv[i], "r"); // open file
+40	  linenum = 1; //start line num over for each file
+41	  if(fp==NULL){ // make sure the file exists and was opened correctly
+42	   fprintf(stderr, "gasp: cannot open %s\n", argv[i]);
+43	   return;
+(gdb) print argv[3]
+No symbol "argv" in current context.
+(gdb) step 
+Single stepping until exit from function fopen@plt,
+which has no line number information.
+0x000000334bc6c460 in fopen@@GLIBC_2.2.5 () from /lib64/libc.so.6
+(gdb) step
+Single stepping until exit from function fopen@@GLIBC_2.2.5,
+which has no line number information.
+0x000000334bc6c3b0 in __fopen_internal () from /lib64/libc.so.6
+(gdb) tsep
+Undefined command: "tsep".  Try "help".
+(gdb) tsepstep
+Single stepping until exit from function __fopen_internal,
+which has no line number information.
+0x000000334bc6c370 in __fopen_maybe_mmap () from /lib64/libc.so.6
+(gdb) step
+Single stepping until exit from function __fopen_maybe_mmap,
+which has no line number information.
+findMatches (argv=0x7fffffffe518, argc=4, 
+    word=0x7fffffffe3c0 "this") at gasp.c:40
+40	  linenum = 1; //start line num over for each file
+(gdb) step
+41	  if(fp==NULL){ // make sure the file exists and was opened correctly
+(gdb) steptsepstep print argv[3]
+$2 = 0x7fffffffe791 "textshort.txt"
+(gdb) print fp
+$3 = (FILE *) 0x602010
+(gdb) finish
+Run till exit from #0  findMatches (argv=0x7fffffffe518, argc=4, 
+    word=0x7fffffffe3c0 "this") at gasp.c:41
+textshort.txt 2 this is the second line in all lowercase
+main (argc=4, argv=0x7fffffffe518) at gasp.c:97
+97	 return 0;
+(gdb) step
+98	}
+(gdb) ts  step
+0x000000334bc21b45 in __libc_start_main () from /lib64/libc.so.6
+(gdb) step
+Single stepping until exit from function __libc_start_main,
+which has no line number information.
+[Inferior 1 (process 3482) exited normally]
+(gdb) step
+The program is not being run.
+(gdb) quit
+kcrt24@klaatu:~/hw4\[crt24@klaatu hw4]$ exit
+exit
+
+Script done on Mon 02 Feb 2015 10:58:10 PM PST

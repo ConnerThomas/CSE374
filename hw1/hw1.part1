@@ -1,0 +1,176 @@
+Script started on Sun 11 Jan 2015 01:16:05 PM PST
+]0;crt24@klaatu:~[?1034h[crt24@klaatu ~]$ echo Hello world
+Hello world
+]0;crt24@klaatu:~[crt24@klaatu ~]$ passwd
+Changing password for user crt24.
+Changing password for crt24.
+(current) UNIX password: 
+New password: 
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+]0;crt24@klaatu:~[crt24@klaatu ~]$ date
+Sun Jan 11 13:16:29 PST 2015
+]0;crt24@klaatu:~[crt24@klaatu ~]$ ls ~
+[0m[01;32mdcdls[0m  hw1.part1  [01;32mlisthome[0m  secretfile
+]0;crt24@klaatu:~[crt24@klaatu ~]$ cd ~
+]0;crt24@klaatu:~[crt24@klaatu ~]$ la -a    s -a
+[0m[01;34m.[0m              .bash_logout   [01;32mdcdls[0m     hw1.part1  secretfile
+[01;34m..[0m             .bash_profile  .emacs    .kshrc     .viminfo
+.bash_history  .bashrc        [01;34m.emacs.d[0m  [01;32mlisthome[0m
+]0;crt24@klaatu:~[crt24@klaatu ~]$ mkdir temp
+]0;crt24@klaatu:~[crt24@klaatu ~]$ mv temp files
+]0;crt24@klaatu:~[crt24@klaatu ~]$ cd files
+]0;crt24@klaatu:~/files[crt24@klaatu files]$ date > now
+]0;crt24@klaatu:~/files[crt24@klaatu files]$ cp now before
+]0;crt24@klaatu:~/files[crt24@klaatu files]$ ls -l
+total 8
+-rw-r--r-- 1 crt24 ugrad_uw 29 Jan 11 13:17 before
+-rw-r--r-- 1 crt24 ugrad_uw 29 Jan 11 13:16 now
+]0;crt24@klaatu:~/files[crt24@klaatu files]$ echo > temp
+]0;crt24@klaatu:~/files[crt24@klaatu files]$ mv temp test
+]0;crt24@klaatu:~/files[crt24@klaatu files]$ cd ..
+]0;crt24@klaatu:~[crt24@klaatu ~]$ rm -rf files/
+]0;crt24@klaatu:~[crt24@klaatu ~]$ echo It\'s a secret! > secretfile
+]0;crt24@klaatu:~[crt24@klaatu ~]$ chmod -w secretfile 
+]0;crt24@klaatu:~[crt24@klaatu ~]$ ls -l
+total 12
+-rwxr-xr-x 1 crt24 ugrad_uw 275 Jan  9 13:10 [0m[01;32mdcdls[0m
+-rw-r--r-- 1 crt24 ugrad_uw   0 Jan 11 13:16 hw1.part1
+-rwxr-xr-x 1 crt24 ugrad_uw  17 Jan  9 13:04 [01;32mlisthome[0m
+-r--r--r-- 1 crt24 ugrad_uw  15 Jan 11 13:18 secretfile
+]0;crt24@klaatu:~[crt24@klaatu ~]$ chmod -r secretfile 
+]0;crt24@klaatu:~[crt24@klaatu ~]$ ls -l
+total 12
+-rwxr-xr-x 1 crt24 ugrad_uw 275 Jan  9 13:10 [0m[01;32mdcdls[0m
+-rw-r--r-- 1 crt24 ugrad_uw   0 Jan 11 13:16 hw1.part1
+-rwxr-xr-x 1 crt24 ugrad_uw  17 Jan  9 13:04 [01;32mlisthome[0m
+---------- 1 crt24 ugrad_uw  15 Jan 11 13:18 secretfile
+]0;crt24@klaatu:~[crt24@klaatu ~]$ cat secretfile 
+cat: secretfile: Permission denied
+]0;crt24@klaatu:~[crt24@klaatu ~]$ uname -r
+3.9.9-0cse.0
+]0;crt24@klaatu:~[crt24@klaatu ~]$ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.1  52072  6680 ?        Ss    2013   1:00 /usr/lib/systemd/systemd --system --deserialize 17
+root         2  0.0  0.0      0     0 ?        S     2013   0:04 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S     2013   0:26 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<    2013   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S<    2013   0:00 [kworker/u:0H]
+root         8  0.0  0.0      0     0 ?        S     2013   0:09 [migration/0]
+root         9  0.0  0.0      0     0 ?        S     2013   0:00 [rcu_bh]
+root        10  0.0  0.0      0     0 ?        S     2013   0:44 [rcu_sched]
+root        11  0.0  0.0      0     0 ?        S     2013   0:08 [migration/1]
+root        12  0.0  0.0      0     0 ?        S     2013   0:43 [ksoftirqd/1]
+root        14  0.0  0.0      0     0 ?        S<    2013   0:00 [kworker/1:0H]
+root        15  0.0  0.0      0     0 ?        S<    2013   0:00 [khelper]
+root        16  0.0  0.0      0     0 ?        S     2013   0:00 [kdevtmpfs]
+root        17  0.0  0.0      0     0 ?        S<    2013   0:00 [netns]
+root        18  0.0  0.0      0     0 ?        S     2013   0:00 [bdi-default]
+root        19  0.0  0.0      0     0 ?        S<    2013   0:00 [kblockd]
+root        20  0.0  0.0      0     0 ?        S     2013   0:00 [khubd]
+root        22  0.0  0.0      0     0 ?        S<    2013   0:00 [rpciod]
+root        23  0.0  0.0      0     0 ?        S     2013   2:04 [kswapd0]
+root        24  0.0  0.0      0     0 ?        SN    2013   0:00 [ksmd]
+root        25  0.0  0.0      0     0 ?        S     2013   0:00 [fsnotify_mark]
+root        26  0.0  0.0      0     0 ?        S<    2013   0:00 [nfsiod]
+root        27  0.0  0.0      0     0 ?        S<    2013   0:00 [crypto]
+root        34  0.0  0.0      0     0 ?        S<    2013   0:00 [kpsmoused]
+root        36  0.0  0.0      0     0 ?        S<    2013   0:00 [deferwq]
+root        44  0.0  0.0      0     0 ?        S     2013   0:00 [kauditd]
+root       157  0.0  0.0      0     0 ?        S<    2013   0:00 [ata_sff]
+root       158  0.0  0.0      0     0 ?        S     2013   0:00 [scsi_eh_0]
+root       159  0.0  0.0      0     0 ?        S     2013   0:00 [scsi_eh_1]
+root       164  0.0  0.0      0     0 ?        S     2013   0:00 [scsi_eh_2]
+root       173  0.0  0.0      0     0 ?        S<    2013   0:56 [kworker/1:1H]
+root       178  0.0  0.0      0     0 ?        S     2013   0:00 [scsi_eh_3]
+root       179  0.0  0.0      0     0 ?        S     2013   0:00 [scsi_eh_4]
+root       180  0.0  0.0      0     0 ?        S     2013   0:00 [scsi_eh_5]
+root       181  0.0  0.0      0     0 ?        S     2013   0:00 [scsi_eh_6]
+root       182  0.0  0.0      0     0 ?        S     2013   0:00 [scsi_eh_7]
+root       183  0.0  0.0      0     0 ?        S     2013   0:00 [scsi_eh_8]
+root       186  0.0  0.0      0     0 ?        S     2013   0:00 [kworker/u:6]
+root       187  0.0  0.0      0     0 ?        S     2013   0:04 [kworker/u:7]
+root       207  0.0  0.0      0     0 ?        S     2013   0:06 [jbd2/sda2-8]
+root       208  0.0  0.0      0     0 ?        S<    2013   0:00 [ext4-dio-unwrit]
+root       257  0.0  2.0 132196 84132 ?        Ss    2013   6:16 /usr/lib/systemd/systemd-journald
+root       267  0.0  0.0  97864     0 ?        Ss    2013   0:00 /usr/sbin/lvmetad
+root       271  0.0  0.0  41576     8 ?        Ss    2013   0:00 /usr/lib/systemd/systemd-udevd
+root       294  0.0  0.0      0     0 ?        S     2013   0:00 [vballoon]
+root       302  0.0  0.0      0     0 ?        S<    2013   0:00 [hd-audio0]
+root       316  0.0  0.0      0     0 ?        S     2013   3:13 [jbd2/sda3-8]
+root       318  0.0  0.0      0     0 ?        S<    2013   0:00 [ext4-dio-unwrit]
+root       328  0.0  0.0      0     0 ?        S     2013   0:12 [jbd2/sda4-8]
+root       329  0.0  0.0      0     0 ?        S<    2013   0:00 [ext4-dio-unwrit]
+root       335  0.0  0.0      0     0 ?        S     2013   1:55 [jbd2/sdc1-8]
+root       336  0.0  0.0      0     0 ?        S<    2013   0:00 [ext4-dio-unwrit]
+root       348  0.0  0.0   4332     4 ?        Ss    2013   0:00 /usr/sbin/acpid
+root       352  0.0  0.0 256756   364 ?        Ssl   2013   0:57 /sbin/rsyslogd -n
+root       355  0.0  0.0  35520  2672 ?        Ss    2013   1:15 /usr/lib/systemd/systemd-logind
+dbus       356  0.0  0.0  24336   544 ?        Ss    2013   2:05 /bin/dbus-daemon --system --address=systemd: --nofork --nopid
+root       357  0.0  0.0  23732     8 ?        Ss    2013   0:00 /usr/sbin/atd -f
+rpc        358  0.0  0.0  37688   580 ?        Ss    2013   0:44 /sbin/rpcbind -w 
+root       375  0.0  0.0 109996     8 tty1     Ss+   2013   0:00 /sbin/agetty --noclear tty1 38400 linux
+root       551  0.0  0.0  25456     0 ?        Ss    2013   0:00 /usr/sbin/xinetd -stayalive -pidfile /var/run/xinetd.pid
+root       567  0.0  0.0 479040  1312 ?        Ssl   2013   5:25 /usr/sbin/automount --pid-file /run/autofs.pid
+rpcuser    571  0.0  0.0  42328   668 ?        Ss    2013   0:00 /sbin/rpc.statd
+opendkim   592  0.0  0.0  99676    20 ?        Ssl   2013   4:00 /usr/sbin/opendkim -x /etc/opendkim.conf -P /var/run/opendkim
+root       624  0.0  0.0 117292     0 ?        S     2013   0:00 /bin/sh
+smmsp      639  0.0  0.0  65588   392 ?        Ss    2013   0:04 sendmail: Queue runner@01:00:00 for /var/spool/clientmqueue
+root       647  0.0  0.0 124092   380 ?        Ss    2013   1:44 /usr/sbin/crond -n
+ntp        648  0.0  0.0  25112   788 ?        Ss    2013   3:24 /usr/sbin/ntpd -u ntp:ntp -g
+root       698  0.0  0.0      0     0 ?        S<    2013   0:47 [kworker/0:1H]
+root      1200  0.0  0.0      0     0 ?        S     2014   4:55 [flush-8:0]
+ewtsui    4086  0.0  0.0  22276  1600 ?        Ss   Jan09   0:17 tmux
+ewtsui    4087  0.0  0.0 115368  1836 pts/15   Ss+  Jan09   0:00 -bash
+rmui34    4356  0.0  0.0  22276  1604 ?        Ss   Jan09   0:16 tmux
+rmui34    4357  0.0  0.0 115368  1856 pts/20   Ss+  Jan09   0:00 -bash
+26432     5052  0.0  0.0 114104     0 ?        S     2014   0:00 script hw1.part1
+26432     5053  0.0  0.0 117424     0 pts/1    Ss+   2014   0:00 bash -i
+26432     5228  0.0  0.0 114104     0 ?        S     2014   0:00 script hw1.part1
+26432     5229  0.0  0.0 117424     0 pts/6    Ss+   2014   0:00 bash -i
+26432     5306  0.0  0.0 114104     0 ?        S     2014   0:00 script hw1.part1
+26432     5307  0.0  0.0 117424     0 pts/7    Ss+   2014   0:00 bash -i
+enchengz 10141  0.0  0.0 126188     0 ?        Ss    2014   0:01 SCREEN
+enchengz 10142  0.0  0.0 115500     4 pts/2    Ss+   2014   0:00 /bin/bash
+clcotton 11868  0.0  0.0  22340  1704 ?        Ss   Jan10   0:08 tmux
+clcotton 11869  0.0  0.0 117428  1844 pts/10   Ss+  Jan10   0:00 -bash
+26446    13392  0.0  0.0 126056     8 ?        Ss    2014   0:00 SCREEN
+26446    13393  0.0  0.0 117564     0 pts/8    Ss+   2014   0:00 /bin/bash
+prudio   13899  0.0  0.0  22276  1628 ?        Ss   Jan10   0:06 tmux
+prudio   13900  0.0  0.0 115368  1864 pts/13   Ss   Jan10   0:00 -bash
+prudio   13934  0.0  0.0 114096   768 pts/13   S+   Jan10   0:00 script hw1.part1
+prudio   13936  0.0  0.0 114104   296 pts/13   S+   Jan10   0:00 script hw1.part1
+prudio   13937  0.0  0.0 115368  1908 pts/16   Ss+  Jan10   0:00 bash -i
+root     15188  0.0  0.0      0     0 ?        S    01:33   0:00 [kworker/0:0]
+root     17030  0.0  0.1 117508  5016 ?        Ss   11:54   0:00 sshd: rmcginty [priv]
+rmcginty 17032  0.0  0.0 117508  2132 ?        S    11:55   0:00 sshd: rmcginty@pts/3
+rmcginty 17033  0.0  0.0 117428  1824 pts/3    Ss+  11:55   0:00 -bash
+root     17121  0.0  0.1 117360  4920 ?        Ss   12:14   0:00 sshd: thorkk [priv] 
+thorkk   17123  0.0  0.0 117360  2152 ?        S    12:15   0:00 sshd: thorkk@pts/5  
+thorkk   17124  0.0  0.0 117428  1872 pts/5    Ss+  12:15   0:00 -bash
+root     17263  0.0  0.0  64524  3160 ?        Ss    2014   0:10 /usr/sbin/sshd -D
+root     17304  0.0  0.0      0     0 ?        S    12:46   0:00 [flush-8:32]
+root     17308  0.0  0.0      0     0 ?        S    12:47   0:00 [kworker/1:0]
+root     17381  0.0  0.1 117528  5164 ?        Ss   12:59   0:00 sshd: crt24 [priv]  
+crt24    17383  0.0  0.0 117528  2148 ?        S    12:59   0:00 sshd: crt24@pts/0   
+crt24    17384  0.0  0.0 117564  2052 pts/0    Ss   12:59   0:00 -bash
+root     17560  0.0  0.0      0     0 ?        S    13:12   0:00 [kworker/1:2]
+crt24    17581  0.0  0.0 114096   756 pts/0    S+   13:16   0:00 script hw1.part1
+crt24    17583  0.0  0.0 114104   288 pts/0    S+   13:16   0:00 script hw1.part1
+crt24    17584  0.0  0.0 117428  1896 pts/11   Ss   13:16   0:00 bash -i
+root     17626  0.0  0.0      0     0 ?        S    13:17   0:00 [kworker/1:1]
+crt24    17636  0.0  0.0 114836  1072 pts/11   R+   13:18   0:00 ps aux
+enchengz 18534  0.0  0.0 126164     0 ?        Ss    2014   0:00 SCREEN
+enchengz 18535  0.0  0.0 115500     8 pts/4    Ss    2014   0:00 /bin/bash
+enchengz 18658  0.0  0.0 355816   408 pts/4    S+    2014   0:03 emacs trie.c
+26433    19751  0.0  0.0 355808     4 ?        S     2014   0:00 emacs t9.c
+root     22630  0.0  0.0   8692   572 ?        Ss    2014   0:11 /usr/local/bin/sshthrottle
+26455    23628  2.6  0.0 370436     0 ?        T     2014 13594:02 emacs hw1.part2
+26446    25216  0.0  0.0 355796   324 ?        Ss    2014   0:00 emacs -daemon test.xq
+root     29900  0.0  0.0      0     0 ?        S    Jan08   0:02 [kworker/0:1]
+]0;crt24@klaatu:~[crt24@klaatu ~]$ grep crt24 /etc/passwd
+[01;31m[Kcrt24[m[K:x:26382:6152::/homes/[01;31m[Kcrt24[m[K:/bin/bash
+]0;crt24@klaatu:~[crt24@klaatu ~]$ exit
+exit
+
+Script done on Sun 11 Jan 2015 01:19:06 PM PST
